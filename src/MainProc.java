@@ -75,14 +75,8 @@ public class MainProc {
 		}
 
 		//count the unique word
-		int uniqueWordCount = 0;
+		int uniqueWordCount = singleTweetCountMap.size();
 		for (Entry<String, Integer> entry : singleTweetCountMap.entrySet()) {
-			String word = entry.getKey();
-			int count = entry.getValue();
-			if (count == 1) {
-				uniqueWordCount++;
-			}
-
 			// add the word count to all tweets count map.
 			if(allTweetsCountMap.containsKey(word)) {
 				allTweetsCountMap.put(word, allTweetsCountMap.get(word) + count);
